@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoGarden — Your Safe Space</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="login-page">
+        <div class="login-art">
+            <div class="login-flower">🌱</div>
+            <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
+            <h1>It's okay to grow<br>at your own pace.</h1>
+            <p>Your feelings matter. Your story matters. And you deserve a place to breathe.</p>
+            <div class="login-stars">✦　✧　·　✦　·　✧</div>
+        </div>
+
+        <form id="loginForm" class="login-card">
+            <div class="brand">🌿 EchoGarden</div>
+            <h2>Welcome to your space</h2>
+            <p class="muted">Enter your details to open your garden.</p>
+
+            <label for="email">Email address</label>
+            <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="password">Create a demo password</label>
+            <input id="password" type="password" inputmode="numeric" placeholder="At least 6 digits" minlength="6"
+                pattern="[0-9]{6,}" autocomplete="current-password" required>
+
+            <p class="hint">Use at least 6 digits, for example 123456.</p>
+            <p id="loginError" class="error" aria-live="polite"></p>
+
+            <button class="primary-btn" type="submit">Open My Garden →</button>
+            <p class="privacy-note">Demo only: this page does not create a secure account.</p>
+        </form>
+    </section>
+
+    <!-- MAIN APP -->
+    <div id="appPage" hidden>
+        <header class="header">
+            <a class="logo" href="#">🌱 EchoGarden</a>
+            <div class="header-actions">
+                <button id="themeBtn" class="secondary-btn">🌙 Dark</button>
+                <button id="logoutBtn" class="secondary-btn">Log out</button>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <span class="eyebrow">YOUR FEELINGS DESERVE SPACE</span>
+                <h1>Welcome to your <span>little world.</span></h1>
+                <p>There is no need to pretend here. Take a breath, and begin wherever you are.</p>
+            </section>
+
+            <section class="card mood-card">
+                <h2>How are you feeling today?</h2>
+                <div class="moods">
+                    <button class="mood active" data-mood="Happy">😊<span>Happy</span></button>
+                    <button class="mood" data-mood="Calm">😌<span>Calm</span></button>
+                    <button class="mood" data-mood="Sad">🌧️<span>Sad</span></button>
+                    <button class="mood" data-mood="Stressed">😵‍💫<span>Stressed</span></button>
+                    <button class="mood" data-mood="Focused">🎯<span>Focused</span></button>
+                    <button class="mood" data-mood="Hopeful">✨<span>Hopeful</span></button>
+                </div>
+
+                <div id="comfort" class="comfort">
+                    <div id="comfortPlant" class="comfort-plant">🌻</div>
+                    <div>
+                        <span id="comfortLabel" class="eyebrow">A LITTLE REMINDER</span>
+                        <h3 id="comfortTitle">You deserve good things.</h3>
+                        <p id="comfortText">Take your time. You are allowed to grow at your own pace.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid">
+                <div class="card">
+                    <h2>🌰 Plant a thought</h2>
+                    <p class="muted">Write anything that's on your mind.</p>
+                    <textarea id="thought" maxlength="300" placeholder="Today I'm feeling..."></textarea>
+                    <button id="plantBtn" class="primary-btn">🌱 Grow my thought</button>
+                    <p id="thoughtMessage" class="message" aria-live="polite"></p>
+                </div>
+
+                <div class="card">
+                    <h2>🌿 Your garden</h2>
+                    <div id="garden" class="garden"></div>
+                    <div class="stat"><span>Seeds planted</span><strong id="count">0</strong></div>
+                    <div class="stat"><span>Garden level</span><strong id="level">Beginner</strong></div>
+                    <button id="clearBtn" class="secondary-btn full">Clear garden</button>
+                </div>
+            </section>
+
+            <!-- CHAT COMPANION -->
+            <section id="chatSection" class="card chat-card">
+                <div class="chat-heading">
+                    <div class="bot-avatar">🌿</div>
+                    <div>
+                        <h2>Little Leaf</h2>
+                        <p class="muted">Your gentle chat companion</p>
+                    </div>
+                    <span class="online-dot">Here to listen</span>
+                </div>
+
+                <div id="chatMessages" class="chat-messages" aria-live="polite">
+                    <div class="bubble bot">
+                        Hey, I'm Little Leaf. 💚 You don't have to find the perfect words.
+                        Tell me how your day is going, what's on your mind, or ask me a question.
+                        Where would you like to begin?
+                    </div>
+                </div>
+
+                <div class="suggestions">
+                    <button class="suggestion" data-message="I'm feeling sad today">I'm feeling sad</button>
+                    <button class="suggestion" data-message="I'm stressed about my future">I'm stressed</button>
+                    <button class="suggestion" data-message="I need some motivation">Motivate me</button>
+                </div>
+
+                <form id="chatForm" class="chat-input">
+                    <input id="chatInput" type="text" maxlength="1000" placeholder="Tell me what's on your mind..."
+                        autocomplete="off" required>
+                    <button class="send-btn" type="submit" aria-label="Send message">➤</button>
+                </form>
+                <p class="chat-disclaimer">Little Leaf is a demo companion, not a real AI or a professional counsellor.
+                    Avoid sharing passwords or private information.</p>
+            </section>
+
+            <section class="card journal-card">
+                <h2>📖 Your thought journal</h2>
+                <div id="journal"></div>
+            </section>
+        </main>
+
+        <footer>Grow gently. Feel deeply. Be kind to yourself. 💚</footer>
+    </div>
+
+</body>
+
+</html>
