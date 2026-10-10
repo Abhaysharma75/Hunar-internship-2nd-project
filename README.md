@@ -1,6 +1,6 @@
 # Hunar-internship-2nd-project
 # 🌱 EchoGarden — Grow Through Every Feeling
-
+# 🚀☯️LIVE DEPLOYMENT - https://abhaysharma75.github.io/Hunar-internship-2nd-project/
 **Your Garden. Your Feelings. Your Space.**
 
 EchoGarden is a creative, interactive emotional wellness web application designed to give users a calming digital space to express their feelings, reflect on their thoughts, and grow through everyday experiences.
